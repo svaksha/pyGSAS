@@ -7,7 +7,7 @@
 # $URL$
 # $Id$
 ########### SVN repository information ###################
-'''Code to demonstrate how export routines are created
+'''Code to demonstrate how GSAS-II data export routines are created
 '''
 import os.path
 import GSASIIpath
@@ -29,7 +29,7 @@ class ExportPhaseText(G2IO.ExportBaseclass):
     def __init__(self,G2frame):
         super(self.__class__,self).__init__( # fancy way to say <parentclass>.__init__
             G2frame=G2frame,
-            formatName = 'text',
+            formatName = 'Text file',
             extension='.txt',
             longFormatName = 'Export phase as text file'
             )
@@ -40,12 +40,12 @@ class ExportPhaseText(G2IO.ExportBaseclass):
         '''Export a phase as a text file
         '''
         # the export process starts here
+        self.InitExport(event)
         # load all of the tree into a set of dicts
         self.loadTree()
         # create a dict with refined values and their uncertainties
         self.loadParmDict()
-        if self.SetupExport( # set export parameters
-            event,                         
+        if self.ExportSelect( # set export parameters
             AskFile=True     # prompt the user for a file name
             ): return 
         self.OpenFile(self.filename)
@@ -113,7 +113,7 @@ class ExportPowderText(G2IO.ExportBaseclass):
     def __init__(self,G2frame):
         super(self.__class__,self).__init__( # fancy way to say <parentclass>.__init__
             G2frame=G2frame,
-            formatName = 'text',
+            formatName = 'Text file',
             extension='.txt',
             longFormatName = 'Export powder data as text file'
             )
@@ -124,20 +124,16 @@ class ExportPowderText(G2IO.ExportBaseclass):
         '''Export a set of powder data as a text file
         '''
         # the export process starts here
+        self.InitExport(event)
         # load all of the tree into a set of dicts
         self.loadTree()
-        print 'Exporter',self.defaultSaveFile()
-        if self.SetupExport( # set export parameters
-            event,
+        if self.ExportSelect( # set export parameters
             AskFile=False # use the default file name
             #AskFile=True
             ): return 
         self.OpenFile()
         hist = self.histnam[0] # there should only be one histogram, in any case take the 1st
         histblk = self.Histograms[hist]
-        #inst = histblk['Instrument Parameters'][0]
-        #hId = histblk['hId']
-        #pfx = ':' + str(hId) + ':'
         fmt = 2*"{:12.3f} " + "{:12.5f} " + 2*"{:12.3f} "
         hfmt = 5*"{:>12s} "
         self.Write(hfmt.format("x","y_obs","weight","y_calc","y_bkg"))
@@ -170,10 +166,10 @@ class ExportPowderReflText(G2IO.ExportBaseclass):
     def Exporter(self,event=None):
         '''Export a set of powder reflections as a text file
         '''
+        self.InitExport(event)
         # load all of the tree into a set of dicts
         self.loadTree()
-        if self.SetupExport( # set export parameters
-            event,
+        if self.ExportSelect( # set export parameters
             AskFile=False # use the default file name
             #AskFile=True
             ): return 
@@ -203,7 +199,7 @@ class ExportSingleText(G2IO.ExportBaseclass):
     def __init__(self,G2frame):
         super(self.__class__,self).__init__( # fancy way to say <parentclass>.__init__
             G2frame=G2frame,
-            formatName = 'reflection list as text',
+            formatName = 'Text file',
             extension='.txt',
             longFormatName = 'Export reflection list as a text file'
             )
@@ -214,10 +210,10 @@ class ExportSingleText(G2IO.ExportBaseclass):
         '''Export a set of single crystal data as a text file
         '''
         # the export process starts here
+        self.InitExport(event)
         # load all of the tree into a set of dicts
         self.loadTree()
-        if self.SetupExport( # set export parameters
-            event,
+        if self.ExportSelect( # set export parameters
             AskFile=False # use the default file name
             #AskFile=True
             ): return 
