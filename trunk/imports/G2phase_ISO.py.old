@@ -9,6 +9,7 @@
 import sys
 import random as ran
 import urllib
+import re
 import numpy as np
 import GSASIIIO as G2IO
 import GSASIIobj as G2obj
@@ -27,18 +28,9 @@ class ISODISTORTPhaseReader(G2IO.ImportPhase):
             longFormatName = 'CIF from ISODISTORT import'
             )
     def ContentsValidator(self, filepointer):
-        filepointer.seek(0) # rewind the file pointer
-        lines = filepointer.read(10000) # scan the first 10K bytes
-        # quick tests for an ISODISTORT output file
-        if lines.find('ISODISTORT') != -1:
-            return True
-        if lines.find('data_isodistort-') != -1:
-            return True
-        if lines.find('_iso_') != -1:
-            return True
-        return False
+        return self.CIFValidator(filepointer)
+
     def Reader(self,filename,filepointer, ParentFrame=None, usedRanIdList=[], **unused):
-        import re
         self.Phase = G2IO.SetNewPhase(Name='new phase',SGData=G2IO.P1SGData) # create a new empty phase dict
         # make sure the ranId is really unique!
         while self.Phase['ranId'] in usedRanIdList:
