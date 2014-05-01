@@ -24,17 +24,17 @@ w\:* {behavior:url(#default#VML);}
  <o:DocumentProperties>
   <o:Author>Von Dreele</o:Author>
   <o:LastAuthor>Von Dreele</o:LastAuthor>
-  <o:Revision>8</o:Revision>
-  <o:TotalTime>1868</o:TotalTime>
+  <o:Revision>9</o:Revision>
+  <o:TotalTime>1871</o:TotalTime>
   <o:Created>2014-03-20T16:54:00Z</o:Created>
-  <o:LastSaved>2014-03-21T15:25:00Z</o:LastSaved>
-  <o:Pages>6</o:Pages>
-  <o:Words>1265</o:Words>
-  <o:Characters>7212</o:Characters>
+  <o:LastSaved>2014-05-01T14:14:00Z</o:LastSaved>
+  <o:Pages>7</o:Pages>
+  <o:Words>1263</o:Words>
+  <o:Characters>7202</o:Characters>
   <o:Company>Argonne National Laboratory</o:Company>
   <o:Lines>60</o:Lines>
   <o:Paragraphs>16</o:Paragraphs>
-  <o:CharactersWithSpaces>8461</o:CharactersWithSpaces>
+  <o:CharactersWithSpaces>8449</o:CharactersWithSpaces>
   <o:Version>14.00</o:Version>
  </o:DocumentProperties>
  <o:OfficeDocumentSettings>
@@ -887,8 +887,8 @@ Size Distribution in Alumina Powder</span><o:p></o:p></strong></h1>
 
 <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>In
 this tutorial you will determine the size distribution of particles in an
-alumina polishing powder using data from a constant wavelength synchrotron X-ray
-USAXS instrument. You will use both Maximum Entropy (<span class=SpellE>MaxEnt</span>)
+alumina polishing powder using data from a constant wavelength synchrotron
+X-ray USAXS instrument. You will use both Maximum Entropy (<span class=SpellE>MaxEnt</span>)
 and Total Non-Negative Least Squares (TNNLS) methods assuming spherical
 particles. The data were collected from <span style='mso-fareast-font-family:
 Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-weight:bold;
@@ -912,8 +912,8 @@ mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-
 Calibri;mso-bidi-theme-font:minor-latin'>Import/Small Angle Data/from a q step
 QIE data file</span></b> menu item to read the data file into GSAS-II. This
 read option is set to read three column small angle scattering data (SASD) as
-Q, intensity and estimated standard deviation in intensity; <span class=GramE>There</span>
-may be a header with metadata information in the front of this file.<span
+Q, intensity and estimated standard deviation in intensity; there may be a
+header with metadata information in the front of this file.<span
 style='mso-spacerun:yes'>  </span>Change the file directory to <b
 style='mso-bidi-font-weight:normal'><span style='font-family:"Calibri","sans-serif";
 mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
@@ -950,8 +950,7 @@ proceed.</p>
 style='font-family:"Calibri","sans-serif";mso-ascii-theme-font:minor-latin;
 mso-hansi-theme-font:minor-latin;mso-bidi-font-family:Calibri;mso-bidi-theme-font:
 minor-latin'>GSAS-II data tree</span></b> window will have several entries and
-the plot window will show the SASD pattern as a log-log plot of <span
-class=SpellE>intensith</span> vs. Q</p>
+the plot window will show the SASD pattern as a log-log plot of intensity vs. Q</p>
 
 <p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype
  id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
@@ -1268,9 +1267,9 @@ src="Small%20Angle%20Size%20Distribution_files/image011.png" v:shapes="Picture_x
 <p class=MsoNormal><o:p>&nbsp;</o:p></p>
 
 <p class=MsoNormal>Reset the Error multiplier back to 1.0 and then do
-Models/Fit to run the IPG fitting. The IPG algorithm did not converge in 100 cycles
-and resulting size distribution is a little choppy but has roughly the same
-bimodal distribution found by <span class=SpellE>MaxEnt</span>.</p>
+Models/Fit to run the IPG fitting. The IPG algorithm did not converge in 100
+cycles and resulting size distribution is a little choppy but has roughly the
+same bimodal distribution found by <span class=SpellE>MaxEnt</span>.</p>
 
 <p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
  id="Picture_x0020_289" o:spid="_x0000_i1027" type="#_x0000_t75" style='width:621.75pt;
@@ -1284,9 +1283,9 @@ src="Small%20Angle%20Size%20Distribution_files/image012.png" v:shapes="Picture_x
 
 <p class=MsoNormal>This can be considerably improved by setting the <b
 style='mso-bidi-font-weight:normal'><span style='font-family:"Calibri","sans-serif";
-mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin'>Error multiplier</span></b>
-to 2.0; the IPG fit con<span style='mso-no-proof:yes'>verges in &lt;20 cycles
-and gives a smoother size distribution.<o:p></o:p></span></p>
+mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin'>Error
+multiplier</span></b> to 2.0; the IPG fit con<span style='mso-no-proof:yes'>verges
+in &lt;20 cycles and gives a smoother size distribution.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
  id="Picture_x0020_291" o:spid="_x0000_i1026" type="#_x0000_t75" style='width:621.75pt;
@@ -1332,11 +1331,10 @@ minor-latin;mso-hansi-theme-font:minor-latin'>Error multiplier</span></b> of <b
 style='mso-bidi-font-weight:normal'><span style='font-family:"Calibri","sans-serif";
 mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin'>2.0</span></b>.</p>
 
-<p class=MsoNormal>You should save this GSAS-II project as it will be used in
-(future) tutorials for Particle fit and Unified fit <span class=SpellE>modelling</span>;
-I used <span class=SpellE><b style='mso-bidi-font-weight:normal'><span
-style='font-family:"Calibri","sans-serif";mso-ascii-theme-font:minor-latin;
-mso-hansi-theme-font:minor-latin'>alumina.gpx</span></b></span>.</p>
+<p class=MsoNormal>You should save this GSAS-II project as it will be used in tutorials
+for fitting small angle scattering data; I used <span class=SpellE><b
+style='mso-bidi-font-weight:normal'><span style='font-family:"Calibri","sans-serif";
+mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin'>alumina.gpx</span></b></span>.</p>
 
 </div>
 
